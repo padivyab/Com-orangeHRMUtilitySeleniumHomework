@@ -20,13 +20,15 @@ public class ForgotPasswordTest extends Utility {
     @Test
     public void userShouldNavigateToForgotPasswordPageSuccessfully()
     {
+        //* Verify the text ‘Forgot Your Password?’
+        String actualText = getTextFromElement(By.xpath("//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']"));
+        String expectedText = "Forgot your password?";
+        Assert.assertEquals(expectedText,actualText);
+
         //* click on the ‘Forgot your password’ link
         clickOnElement(By.xpath("//div[@class='orangehrm-login-forgot']"));
 
-        //* Verify the text ‘Forgot Your Password?’
-        String actualText = getTextFromElement(By.xpath("//button[@type='submit']"));
-        String expectedText = "Reset Password";
-        Assert.assertEquals(expectedText,actualText);
+
 
     }
 
